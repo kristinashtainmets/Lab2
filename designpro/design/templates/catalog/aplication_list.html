@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "index.html" %}
 
-</body>
-</html>
+{% block content %}
+<h1>Application List</h1>
+
+{% if application_list %}
+{% for application in application_list %}
+<div>
+    <p><strong>Дата добавления:</strong>{{ application.date }}</p>
+    <p><strong>Название:</strong>{{ application.title }}</p>
+    <p><strong>Категория заявки:</strong>{% for category in application.category.all %} {{category}}{% endfor %}</p>
+    <p><strong>Фотография:</strong></p>
+    <img src="{{ request.photo.url }}" alt="{{ request.title }}" width="300px" height="250px"></div>
+{% endfor %}
+{% else %}
+<p>There are no applications now</p>
+{% endif %}
+{% endblock %}
