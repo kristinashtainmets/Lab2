@@ -6,3 +6,4 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),  # новый URL-маршрут для аутентификации
     path('admin/', admin.site.urls),
 ]
+

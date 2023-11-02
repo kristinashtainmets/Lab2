@@ -12,5 +12,16 @@
 {% else %}
 <a href="{% url 'login' %}">Войти</a> или <a href="{% url 'register' %}">Зарегистрироваться</a>
 {% endif %}
+{% for design in completed_designs %}
+    <div>
+        <h2>{{ design.title }}</h2>
+        <p>{{ design.timestamp }}</p>
+        <p>{{ design.category }}</p>
+        <img src="{{ design.photo.url }}" alt="{{ design.title }}">
+    </div>
+{% endfor %}
+
+<p>Количество заявок, находящихся в статусе «Принято в работу»: {{ in_progress_count }}</p>
 </body>
 </html>
+
