@@ -14,7 +14,7 @@ class RegisterForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super().clean()
         full_name = cleaned_data.get('full_name')
-        if not all(x.isalpha() or x.isspace() for x in full_name):
+        if not all(x.isalpha() or x.isspace() for x  in full_name):
             raise ValidationError('ФИО может содержать только буквы и пробелы.')
 
 
