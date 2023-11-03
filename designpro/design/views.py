@@ -40,14 +40,6 @@ def logout_view(request):
 from django.shortcuts import render
 
 
-# from .models import DesignRequest
-
-# def home(request):
-#   completed_designs = DesignRequest.objects.filter(status='C').order_by('-timestamp')[:4]
-#  in_progress_count = DesignRequest.objects.filter(status='P').count()
-# return render(request, 'index.html', {'completed_designs': completed_designs, 'in_progress_count': in_progress_count})
-
-
 def home(request):
     completed_designs = Application.objects.filter(status='C').order_by('-date')[:4]
     in_progress_count = Application.objects.filter(status='P').count()
