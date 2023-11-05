@@ -1,7 +1,8 @@
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -84,3 +85,12 @@ class CreateRequestView(LoginRequiredMixin, CreateView):
 def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
+
+class ApplicationDeleteView(LoginRequiredMixin, DeleteView):
+    model = Application
+    template_name = 'application_confirm_delete.html'
+    success_url = reverse_lazy('profile')
+
+    def get_queryset(self):
+        owner = self.request.user
+        return self.model.objects.filter(user=owner)
