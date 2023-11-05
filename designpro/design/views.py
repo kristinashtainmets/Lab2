@@ -9,6 +9,9 @@ from django.views import View
 
 from .forms import CustomUserCreationForm
 from .models import Application
+from django.views.generic.edit import CreateView
+from .models import Request
+
 
 
 class ApplicationListView(ListView):
@@ -58,3 +61,20 @@ def login_view(request):
 class ProfileView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'profile.html')
+
+class CreateRequestView(LoginRequiredMixin, CreateView):
+    model = Request
+    fields = ['title', 'description', 'category', 'photo']
+    template_name = 'create_request.html'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('profile')
+
+
+def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)

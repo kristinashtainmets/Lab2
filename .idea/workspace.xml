@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f5dfe62-f11a-4862-a87c-83fe3150ba20" name="Changes" comment="Добавляем ссылку на профиль">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="7f5dfe62-f11a-4862-a87c-83fe3150ba20" name="Changes" comment="Создаём html файл для создания запросов" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -211,7 +204,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699182382296</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Создали профиль">
+      <option name="closed" value="true" />
+      <created>1699182867737</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699182867738</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Создаём html файл для создания запросов">
+      <option name="closed" value="true" />
+      <created>1699183115337</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699183115337</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +251,8 @@
     <MESSAGE value="Вносим оставшиеся изменение" />
     <MESSAGE value="Создаём html файл для профиля пользователя" />
     <MESSAGE value="Добавляем ссылку на профиль" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавляем ссылку на профиль" />
+    <MESSAGE value="Создали профиль" />
+    <MESSAGE value="Создаём html файл для создания запросов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создаём html файл для создания запросов" />
   </component>
 </project>
