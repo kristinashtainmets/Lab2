@@ -4,13 +4,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.shortcuts import redirect
 from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import ListView
 from django.views import View
 
 from .forms import CustomUserCreationForm
 from .models import Application
 from django.views.generic.edit import CreateView
-from .models import Request
 
 
 
@@ -62,9 +62,10 @@ class ProfileView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'profile.html')
 
+
 class CreateRequestView(LoginRequiredMixin, CreateView):
-    model = Request
-    fields = ['title', 'description', 'category', 'photo']
+    model = Application
+    fields = ['title', 'description', 'category', 'photo_file']
     template_name = 'create_request.html'
 
     def form_valid(self, form):

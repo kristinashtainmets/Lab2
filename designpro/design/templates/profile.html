@@ -9,6 +9,7 @@
 <div class="container">
     <h1 class="my-4">Профиль</h1>
     <p>Добро пожаловать, {{ request.user.username }}!</p>
+    <a href="{% url 'create_request' %}" class="btn btn-primary mb-3">Создать новую заявку</a>
     <a href="{% url 'index' %}">Главная</a> <br> <br>
 </div>
 </body>
