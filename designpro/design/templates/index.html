@@ -8,6 +8,7 @@
 <p>Мы - дизайн-студия, специализирующаяся на создании уникальных и инновационных дизайнов.</p>
 {% if request.user.is_authenticated %}
 <p>Привет, {{ request.user.username }}!</p>
+<a href="{% url 'profile' %}">Личный кабинет</a>
 <a href="{% url 'logout' %}">Выйти</a>
 {% else %}
 <a href="{% url 'login' %}">Войти</a> или <a href="{% url 'register' %}">Зарегистрироваться</a>

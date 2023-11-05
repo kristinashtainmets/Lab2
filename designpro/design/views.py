@@ -1,10 +1,11 @@
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.shortcuts import redirect
 from django.shortcuts import render
-from django.views import generic
 from django.views.generic import ListView
+from django.views import View
 
 from .forms import CustomUserCreationForm
 from .models import Application
@@ -52,3 +53,8 @@ def login_view(request):
     else:
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
+
+
+class ProfileView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'profile.html')
