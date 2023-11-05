@@ -1,24 +1,19 @@
-from django.contrib.auth import logout
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
+
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views import generic
+from django.views.generic import ListView
 
 from .forms import CustomUserCreationForm
 from .models import Application
 
 
-def index(request):
-    Applications_title = Application.objects.all()
-    Applications_description = Application.description
-    Applications_category = Application.category
-    return render(request, 'index.html', context={Applications_title: Application.objects.all(),
-                                                  Applications_description: Application.description,
-                                                  Applications_category: Application.category})
-
-
-class ApplicationListView(LoginRequiredMixin, generic.ListView):
+class ApplicationListView(ListView):
     model = Application
+    template_name = 'aplication_list.html'
+    context_object_name = 'application'
 
 
 def register(request):
@@ -34,10 +29,7 @@ def register(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('/')
-
-
-from django.shortcuts import render
+    return redirect('index')
 
 
 def home(request):
@@ -45,3 +37,18 @@ def home(request):
     in_progress_count = Application.objects.filter(status='P').count()
     return render(request, 'index.html',
                   {'completed_designs': completed_designs, 'in_progress_count': in_progress_count})
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})

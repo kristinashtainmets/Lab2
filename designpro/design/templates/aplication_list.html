@@ -3,14 +3,14 @@
 {% block content %}
 <h1>Application List</h1>
 
-{% if application_list %}
-{% for application in application_list %}
+{% if application %}
+{% for i in application %}
 <div>
-    <p><strong>Дата добавления:</strong>{{ application.date }}</p>
-    <p><strong>Название:</strong>{{ application.title }}</p>
+    <p><strong>Дата добавления:</strong>{{ i.date }}</p>
+    <p><strong>Название:</strong>{{ i.title }}</p>
     <p><strong>Категория заявки:</strong>{% for category in application.category.all %} {{category}}{% endfor %}</p>
     <p><strong>Фотография:</strong></p>
-    <img src="{{ request.photo.url }}" alt="{{ request.title }}" width="300px" height="250px"></div>
+    <img src="{{ i.photo_file.url }}" alt="{{ request.title }}" width="300px" height="250px"></div>
 {% endfor %}
 {% else %}
 <p>There are no applications now</p>

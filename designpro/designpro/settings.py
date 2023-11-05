@@ -127,3 +127,4 @@ runserver.default_port = '8080'
 
 runserver.default_addr = 'localhost'
 
+LOGOUT_REDIRECT_URL = '/'

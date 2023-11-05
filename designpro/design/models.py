@@ -52,5 +52,5 @@ class Application(models.Model):
                                    validators=[FileExtensionValidator(['jpg', 'jpeg', 'png', 'bmp'])])
     status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOICES, default='N')
     date = models.DateTimeField(verbose_name='Дата добавления', auto_now_add=True)
-    user = models.ForeignKey(CustomUser, verbose_name='Пользователь', on_delete=models.CASCADE)
+
 

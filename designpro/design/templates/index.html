@@ -8,7 +8,7 @@
 <p>Мы - дизайн-студия, специализирующаяся на создании уникальных и инновационных дизайнов.</p>
 {% if request.user.is_authenticated %}
 <p>Привет, {{ request.user.username }}!</p>
-<a href="{% url 'logout' %}?next=/">Выйти</a>
+<a href="{% url 'logout' %}">Выйти</a>
 {% else %}
 <a href="{% url 'login' %}">Войти</a> или <a href="{% url 'register' %}">Зарегистрироваться</a>
 {% endif %}
@@ -17,7 +17,7 @@
         <h2>{{ design.title }}</h2>
         <p>{{ design.date }}</p>
         <p>{% for category in design.category.all %} {{category}}{% endfor %}</p>
-        <img src="{{ design.photo_file.url }}" alt="{{ design.title }}">
+        <img src="{{ design.photo_file.url }}" alt="{{ design.title }}" width="300px" height="300px">
     </div>
 {% endfor %}
 

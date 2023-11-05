@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f5dfe62-f11a-4862-a87c-83fe3150ba20" name="Changes" comment="Вносим оставшиеся изменение">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Lab2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lab2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/designpro/design/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designpro/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designpro/design/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designpro/design/templates/catalog/aplication_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/templates/aplication_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designpro/design/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designpro/design/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/designpro/design/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designpro/designpro/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/designpro/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/designpro/designpro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/designpro/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -46,6 +56,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Кристина\PycharmProjects\Lab2\designpro\design\templates" />
       <recent name="C:\Users\Кристина\PycharmProjects\Lab2\designpro\image" />
       <recent name="C:\Users\Кристина\PycharmProjects\Lab2\designpro\design\image" />
       <recent name="C:\Users\Кристина\PycharmProjects\Lab2\designpro\design\templates\registration" />
@@ -180,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698939812524</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Вносим оставшиеся изменение">
+      <option name="closed" value="true" />
+      <created>1698979171151</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698979171151</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
