@@ -13,11 +13,16 @@ from .models import Application
 from django.views.generic.edit import CreateView
 
 
-
 class ApplicationListView(ListView):
     model = Application
     template_name = 'aplication_list.html'
     context_object_name = 'application'
+
+    def get_queryset(self):
+        status = self.request.GET.get('status', 'all')
+        if status != 'all':
+            return Application.objects.filter(status=status)
+        return Application.objects.all()
 
 
 def register(request):

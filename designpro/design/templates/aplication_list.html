@@ -4,13 +4,24 @@
 <h1>Application List</h1>
 
 {% if application %}
-{% for i in application %}
+<form method="get">
+    <select name="status">
+        <option value="all">Все</option>
+        <option value="N">Новая</option>
+        <option value="P">Принято в работу</option>
+        <option value="C">Выполнено</option>
+    </select>
+    <input type="submit" value="Фильтровать">
+</form>
+{% for i in object_list %}
 <div>
     <p><strong>Дата добавления:</strong>{{ i.date }}</p>
     <p><strong>Название:</strong>{{ i.title }}</p>
-    <p><strong>Категория заявки:</strong>{% for category in application.category.all %} {{category}}{% endfor %}</p>
+    <p><strong>Статус заявки:</strong> {{ i.get_status_display }}</p>
+    <p><strong>Категория заявки:</strong>{% for category in i.category.all %} {{category}}{% endfor %}</p>
     <p><strong>Фотография:</strong></p>
-    <img src="{{ i.photo_file.url }}" alt="{{ request.title }}" width="300px" height="250px"></div>
+    <img src="{{ i.photo_file.url }}" alt="{{ i.title }}" width="300px" height="250px">
+</div>
 {% endfor %}
 {% else %}
 <p>There are no applications now</p>
