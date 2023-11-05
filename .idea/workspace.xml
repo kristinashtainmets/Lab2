@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f5dfe62-f11a-4862-a87c-83fe3150ba20" name="Changes" comment="Вносим оставшиеся изменение">
-      <change afterPath="$PROJECT_DIR$/designpro/design/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/templates/catalog/aplication_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/templates/aplication_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/designpro/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/designpro/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/designpro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/designpro/urls.py" afterDir="false" />
-    </list>
+    <list default="true" id="7f5dfe62-f11a-4862-a87c-83fe3150ba20" name="Changes" comment="Создаём html файл для профиля пользователя" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698979171151</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Создаём html файл для профиля пользователя">
+      <option name="closed" value="true" />
+      <created>1699182261512</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699182261514</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,6 +225,7 @@
     <MESSAGE value="Дополняем файл с моделями" />
     <MESSAGE value="Дополняем файл index.html" />
     <MESSAGE value="Вносим оставшиеся изменение" />
-    <option name="LAST_COMMIT_MESSAGE" value="Вносим оставшиеся изменение" />
+    <MESSAGE value="Создаём html файл для профиля пользователя" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создаём html файл для профиля пользователя" />
   </component>
 </project>
