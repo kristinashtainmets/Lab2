@@ -54,3 +54,6 @@ class Application(models.Model):
     status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOICES, default='N')
     date = models.DateTimeField(verbose_name='Дата добавления', auto_now_add=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='requests')
+
+    def __str__(self):
+        return self.title

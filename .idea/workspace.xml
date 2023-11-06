@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f5dfe62-f11a-4862-a87c-83fe3150ba20" name="Changes" comment="Создаём html файл для удаления заявки">
+    <list default="true" id="7f5dfe62-f11a-4862-a87c-83fe3150ba20" name="Changes" comment="Поправляем создание заявки для корректного сохранения">
+      <change afterPath="$PROJECT_DIR$/designpro/design/templates/application_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/designpro/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/designpro/design/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/templates/aplication_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/designpro/design/templates/create_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/templates/create_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designpro/design/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/designpro/design/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/designpro/design/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/designpro/design/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -268,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699187295752</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Поправляем создание заявки для корректного сохранения">
+      <option name="closed" value="true" />
+      <created>1699236915127</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699236915128</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -305,6 +313,7 @@
     <MESSAGE value="Проверяем работу сайта" />
     <MESSAGE value="Отредактируем класс для корректной работы фильтрации" />
     <MESSAGE value="Создаём класс для удаления заявки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создаём класс для удаления заявки" />
+    <MESSAGE value="Поправляем создание заявки для корректного сохранения" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправляем создание заявки для корректного сохранения" />
   </component>
 </project>

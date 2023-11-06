@@ -1,0 +1,18 @@
+
+
+{% block content %}
+
+<h1>Удалить заявку</h1>
+{% if application.status == 'N' %}
+  <p>Вы уверены, что хотите удалить заявку: {{ object }}?</p>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Да, удалить.">
+  </form>
+
+{% else %}
+      <p>Вы не можете удалить заявку, статус которой был изменен на "Принято в работу" или "Выполнено"</p>
+{% endif %}
+
+{% endblock %}

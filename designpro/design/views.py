@@ -1,16 +1,17 @@
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView
 from django.views import View
 
 from .forms import CustomUserCreationForm
 from .models import Application
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 
 
 class ApplicationListView(ListView):
@@ -63,9 +64,13 @@ def login_view(request):
     return render(request, 'registration/login.html', {'form': form})
 
 
-class ProfileView(LoginRequiredMixin, View):
-    def get(self, request):
-        return render(request, 'profile.html')
+class ProfileView(LoginRequiredMixin, ListView):
+    model = Application
+    template_name = 'profile.html'
+    context_object_name = 'applications'
+
+    def get_queryset(self):
+        return Application.objects.filter(user=self.request.user)
 
 
 class CreateRequestView(LoginRequiredMixin, CreateView):
@@ -87,3 +92,7 @@ def form_valid(self, form):
     return super().form_valid(form)
 
 
+class DeleteRequestView(LoginRequiredMixin, DeleteView):
+    model = Application
+    success_url = reverse_lazy('profile')
+    template_name = 'application_delete.html'

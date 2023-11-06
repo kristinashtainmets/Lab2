@@ -9,8 +9,31 @@
 <div class="container">
     <h1 class="my-4">Профиль</h1>
     <p>Добро пожаловать, {{ request.user.username }}!</p>
-    <a href="{% url 'create_request' %}" class="btn btn-primary mb-3">Создать новую заявку</a>
     <a href="{% url 'index' %}">Главная</a> <br> <br>
+    <a href="{% url 'create_request' %}" class="btn btn-primary mb-3">Создать новую заявку</a>
+    <h2>Мои заявки</h2>
+    <ul>
+        {% for request in applications %}
+            <li>
+                <h3>{{ request.title }}</h3>
+                <p>{{ request.description }}</p>
+                <img src="{{ request.photo_file.url }}" alt="{{ request.title }}" width="300px" height="250px">
+                <p>Категории:
+                    {% for category in request.category.all %}
+                    {{ category }}
+                    {% endfor %}
+                </p>
+                <p>Статус: {{ request.get_status_display }}</p>
+                {% if request.status == 'N' %}
+                    <a href="{% url 'delete_request' request.id %}">Удалить</a>
+                {% else %}
+                <p>Вы не можете удалить заявку, статус которой был изменен на "принято в работу" или "Выполнено"</p>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>У вас нет заявок.</li>
+        {% endfor %}
+    </ul>
 </div>
 </body>
 </html>
