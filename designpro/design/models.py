@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.core.validators import FileExtensionValidator
 from django.db import models
@@ -48,9 +49,8 @@ class Application(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=1000, help_text="Enter a brief description of the application")
     category = models.ManyToManyField(Category, help_text="Select a genre for this application")
-    photo_file = models.ImageField(max_length=254,upload_to='image/',
+    photo_file = models.ImageField(max_length=254, upload_to='image/',
                                    validators=[FileExtensionValidator(['jpg', 'jpeg', 'png', 'bmp'])])
     status = models.CharField(max_length=254, verbose_name='Статус', choices=STATUS_CHOICES, default='N')
     date = models.DateTimeField(verbose_name='Дата добавления', auto_now_add=True)
-
-
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='requests')

@@ -7,4 +7,4 @@ admin.site.register(CustomUser)
 
 @admin.register(Application)
 class ApplicationAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'status')
+    list_display = ('title', 'description', 'status', 'user')

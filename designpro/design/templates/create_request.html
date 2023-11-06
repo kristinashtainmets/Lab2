@@ -10,7 +10,7 @@
 <div class="container">
     <h1 class="my-4">Создать новую заявку</h1>
     <a href="{% url 'index' %}">Главная</a>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
             {{ form.title.label_tag }}
