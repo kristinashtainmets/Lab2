@@ -111,3 +111,6 @@ class CategoryCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     fields = ['name']
     template_name = 'category_new.html'
     success_url = reverse_lazy('admin_dashboard')
+
+    def test_func(self):
+        return self.request.user.is_superuser
