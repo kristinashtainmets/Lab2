@@ -6,8 +6,6 @@
     <a href="{% url 'logout' %}?next=/">Выйти</a>
 </div>
 
-<h1>Панель администратора</h1>
-
 <a href="{% url 'category_new' %}">Создать новую категорию</a>
 
 {% for category in categories %}
@@ -18,12 +16,12 @@
 {% endfor %}
 
 <ul>
-    {% for request in requests %}
+    {% for request in applications %}
     <li>
         <h3>{{ request.title }}</h3>
-        <img src="{{ request.photo.url }}" alt="{{ request.title }}" width="300px" height="250px">
+        <img src="{{ request.photo_file.url }}" alt="{{ request.title }}" width="300px" height="250px">
         <p>{{ request.description }}</p>
-        <p>Категория: {{ request.category.name }}</p>
+        <p>Категории:{{ request.category}}</p>
         <p>Статус: {{ request.get_status_display }}</p>
         <a href="{% url 'change_request_status' request.id %}">Изменить статус</a>
     </li>

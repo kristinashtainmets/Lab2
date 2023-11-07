@@ -18,7 +18,7 @@
     <p><strong>Дата добавления:</strong>{{ i.date }}</p>
     <p><strong>Название:</strong>{{ i.title }}</p>
     <p><strong>Статус заявки:</strong> {{ i.get_status_display }}</p>
-    <p><strong>Категория заявки:</strong>{% for category in i.category.all %} {{category}}{% endfor %}</p>
+    <p><strong>Категория заявки:</strong>{{ i.category }}</p>
     <p><strong>Фотография:</strong></p>
     <img src="{{ i.photo_file.url }}" alt="{{ i.title }}" width="300px" height="250px">
 </div>

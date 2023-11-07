@@ -97,14 +97,19 @@ class DeleteRequestView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('profile')
     template_name = 'application_delete.html'
 
-class AdminDashboardView(UserPassesTestMixin, View):
-    def test_func(self):
-        return self.request.user.is_superuser
+class AdminDashboardView(ListView):
+    model = Application
+    template_name = 'admin_dashboard.html'
+    context_object_name = 'applications'
 
-    def get(self, request):
-        all_requests = Application.objects.all()
-        categories = Category.objects.all()
-        return render(request, 'admin_dashboard.html', {'requests': all_requests, 'categories': categories})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["categories"] = Category.objects.all()
+        return context
+
+
+
+
 
 class CategoryCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Category
@@ -127,7 +132,7 @@ class CategoryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class ChangeRequestStatusView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Application
     form_class = ChangeRequestStatusForm
-    template_name = 'change_request_status.html'
+    template_name = 'change_status.html'
     success_url = reverse_lazy('admin_dashboard')
 
     def test_func(self):

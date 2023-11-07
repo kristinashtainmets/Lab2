@@ -19,9 +19,7 @@
                 <p>{{ request.description }}</p>
                 <img src="{{ request.photo_file.url }}" alt="{{ request.title }}" width="300px" height="250px">
                 <p>Категории:
-                    {% for category in request.category.all %}
-                    {{ category }}
-                    {% endfor %}
+                    {{ request.category }}
                 </p>
                 <p>Статус: {{ request.get_status_display }}</p>
                 {% if request.status == 'N' %}

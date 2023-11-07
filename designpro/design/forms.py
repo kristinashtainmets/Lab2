@@ -49,7 +49,7 @@ class ChangeRequestStatusForm(forms.ModelForm):
         comment = cleaned_data.get('comment')
         design = cleaned_data.get('design')
 
-        if status == Application.P and not comment:
+        if status == 'P' and not comment:
             self.add_error('comment', 'Комментарий обязателен при смене статуса на "Принято в работу".')
-        elif status == Application.C and not design:
+        elif status == 'C' and not design:
             self.add_error('design', 'Дизайн обязателен при смене статуса на "Выполнено".')

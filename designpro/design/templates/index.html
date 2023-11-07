@@ -9,19 +9,14 @@
 {% if request.user.is_authenticated %}
 <p>Привет, {{ request.user.username }}!</p>
 <a href="{% url 'profile' %}">Личный кабинет</a>
-
+{% if request.user.is_superuser %}
+<a href="{% url 'admin_dashboard' %}">Панель администратора</a>
+{% endif %}
 <a href="{% url 'logout' %}">Выйти</a>
 {% else %}
 <a href="{% url 'login' %}">Войти</a> или <a href="{% url 'register' %}">Зарегистрироваться</a>
 {% endif %}
-{% for design in completed_designs %}
-    <div>
-        <h2>{{ design.title }}</h2>
-        <p>{{ design.date }}</p>
-        <p>{% for category in design.category.all %} {{category}}{% endfor %}</p>
-        <img src="{{ design.photo_file.url }}" alt="{{ design.title }}" width="300px" height="300px">
-    </div>
-{% endfor %}
+
 
 <p>Количество заявок, находящихся в статусе «Принято в работу»: {{ in_progress_count }}</p>
 
