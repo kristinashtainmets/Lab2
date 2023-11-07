@@ -1,16 +1,16 @@
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect
-
-from django.shortcuts import redirect, get_object_or_404
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.shortcuts import redirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView
 from django.views import View
 
 from .forms import CustomUserCreationForm
-from .models import Application
+from .models import Application, Category
+
 from django.views.generic.edit import CreateView, DeleteView
 
 
@@ -96,3 +96,13 @@ class DeleteRequestView(LoginRequiredMixin, DeleteView):
     model = Application
     success_url = reverse_lazy('profile')
     template_name = 'application_delete.html'
+
+class AdminDashboardView(UserPassesTestMixin, View):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get(self, request):
+        all_requests = Application.objects.all()
+        categories = Category.objects.all()
+        return render(request, 'admin_dashboard.html', {'requests': all_requests, 'categories': categories})
+

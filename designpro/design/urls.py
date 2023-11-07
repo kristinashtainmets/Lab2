@@ -2,6 +2,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from .views import AdminDashboardView
 from .views import ProfileView, CreateRequestView, \
  DeleteRequestView
 
@@ -14,4 +15,5 @@ urlpatterns = [
                   path('profile/', ProfileView.as_view(), name='profile'),
                   path('create_request/', CreateRequestView.as_view(), name='create_request'),
                   path('delete_request/<int:pk>/', DeleteRequestView.as_view(), name='delete_request'),
+                  path('admin_dashboard/', AdminDashboardView.as_view(), name='admin_dashboard'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
