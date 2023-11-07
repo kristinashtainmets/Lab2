@@ -114,3 +114,12 @@ class CategoryCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def test_func(self):
         return self.request.user.is_superuser
+
+class CategoryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Category
+    template_name = 'category_delete.html'
+    success_url = reverse_lazy('admin_dashboard')
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
