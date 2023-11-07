@@ -106,3 +106,8 @@ class AdminDashboardView(UserPassesTestMixin, View):
         categories = Category.objects.all()
         return render(request, 'admin_dashboard.html', {'requests': all_requests, 'categories': categories})
 
+class CategoryCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+    model = Category
+    fields = ['name']
+    template_name = 'category_new.html'
+    success_url = reverse_lazy('admin_dashboard')
